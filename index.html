@@ -4,27 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 04/10: rebuilt as a single HTML file (no build step), Tailwind via browser CDN, design copied from hackaboa.com -->
-    <title>Hackaha 💻🤓🏰 | Est. 2026 | Hacka* Network</title>
+    <title>Hackaha 🇨🇿 | Est. 2026 | Hacka* Network</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up every Thursday in Prague." />
+    <meta name="description" content="A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up in Prague." />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#000000" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hackaha.com" />
-    <meta property="og:title" content="Hackaha 💻🤓🏰 | Est. 2026 | Hacka* Network" />
-    <meta property="og:description" content="A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up every Thursday in Prague." />
+    <meta property="og:title" content="Hackaha 🇨🇿 | Est. 2026 | Hacka* Network" />
+    <meta property="og:description" content="A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up in Prague." />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Hackaha 💻🤓🏰 | Est. 2026 | Hacka* Network" />
-    <meta name="twitter:description" content="A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up every Thursday in Prague." />
+    <meta name="twitter:title" content="Hackaha 🇨🇿 | Est. 2026 | Hacka* Network" />
+    <meta name="twitter:description" content="A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up in Prague." />
 
     <!-- Icons and Links -->
     <link rel="canonical" href="https://hackaha.com" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,12 +46,12 @@
       @layer base {
         body {
           @apply bg-black text-white leading-relaxed font-normal;
-          font-family: "IBM Plex Mono", monospace;
+          font-family: "VT323", monospace;
         }
 
         h1, h2, h3, h4, h5, h6 {
           @apply font-bold mb-4;
-          font-family: "Press Start 2P", cursive;
+          font-family: "VT323", monospace;
         }
 
         h1 { @apply text-3xl md:text-5xl; }
@@ -86,22 +85,15 @@
     <div class="p-8 mt-20 max-w-full md:max-w-3xl mx-auto">
       <!-- Hero (copy adapted from hackaboa for the Prague node) -->
       <section>
-        <h1 class="text-center text-avocado-500">
-          Hackaha <span class="whitespace-nowrap">💻🤓🏰</span>
+        <h1 class="text-center text-white text-7xl">
+          <span class="text-red-600">HACKA</span>HA
         </h1>
-        <h2 class="text-center text-avocado-500 text-base mt-8 mb-8">
-          EST 2026. Part of
-          <a href="https://hacka.network/?utm_source=hackaha" target="_blank" class="underline">
-            <span class="whitespace-nowrap">HACKA* NETWORK</span>
-          </a>
-        </h2>
+        <p class="text-center text-white text-base mt-8 mb-8">
+          PRAHA/PRAGUE, CZECHIA. Est. 2026.
+        </p>
 
-        <p class="font-bold">
-          A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up every Thursday for weekly co-working (and demos) in
-          <a href="https://www.google.com/maps/search/Prague+city+centre" target="_blank" rel="noopener noreferrer" class="underline">
-            Prague city centre
-          </a>
-          , Czechia. The exact location is shared after you sign up.
+      <p class="font-bold">
+          A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up for weekly co-working (and demos) in Prague, Czechia. The exact location is shared after you sign up.
         </p>
         <p class="text-base italic font-bold">
           Not in Prague?
@@ -120,27 +112,22 @@
           <li><span class="font-bold">10am – Intros</span> (a little about yourself + what you're working on)</li>
           <li><span class="font-bold">12:30pm – Local lunch</span> together (if you want)</li>
           <li><span class="font-bold">3pm – Demos</span> (share what you made today, or just watch)</li>
-          <li><span class="font-bold">5pm – Drinks</span> somewhere nearby 🍻🍷</li>
+          <li><span class="font-bold">5pm – Beers</span> somewhere nearby 🍺</li>
         </ul>
 
-        <p class="text-sm italic">
-          We follow the official
-          <a href="https://github.com/hacka-network/hacka.network/blob/main/day-rules.md" target="_blank" rel="noopener noreferrer" class="underline">
-            Hacka* day rules
-          </a>
-          .
-        </p>
       </section>
 
       <!-- Next meetup: stays hidden until a Luma event is added in the script below -->
-      <section id="next-meetup" class="mt-8 text-left hidden">
+      <section id="next-meetup" class="mt-8 text-left">
         <div class="flex flex-col justify-center my-12">
-          <h4>Our next meetup:</h4>
-          <div id="meetup-embed"></div>
+          <h2>Our next meetup:</h2>
+          <p class="flex flex-col justify-center gap-x-2">
+            <h3>Meetup #1</h3>
+            <p>Date TBD | Location revealed after you sign up</p>
+          </p>
         </div>
       </section>
 
-      <!-- Previous meetups: stays hidden until tweet IDs are added to the gist -->
       <section id="previous-meetups" class="my-12 hidden">
         <p>Previous meetups:</p>
         <div class="overflow-x-auto scroll-smooth">
@@ -149,56 +136,8 @@
       </section>
     </div>
 
-    <script>
-      // 04/10: vanilla JS replacing hackaboa's React sections — no build step.
-      // Create events on lu.ma, then add them here; the next upcoming one shows automatically.
-      const lumaEvents = [
-        // { date: "2026-10-08", eventId: "evt-xxxxxxxxxxxxxxxx" },
-      ]
-
-      // Tweet IDs of previous meetups. Edit the gist at:
-      // https://gist.github.com/matosdfm/ebd367bfac76dfec177d3af3c861506d
-      const tweetsGistUrl = "https://gist.githubusercontent.com/matosdfm/ebd367bfac76dfec177d3af3c861506d/raw/hackaha_posts.json"
-
-      // Show the next upcoming Luma event, or keep the section hidden (same behaviour as hackaboa).
-      const meetupSection = document.getElementById("next-meetup")
-      const todayStr = new Date().toISOString().split("T")[0]
-      let nextEvent = null
-      for (const event of lumaEvents) {
-        if (event.date > todayStr && (nextEvent === null || event.date < nextEvent.date)) {
-          nextEvent = event
-        }
-      }
-      if (nextEvent) {
-        const iframe = document.createElement("iframe")
-        iframe.src = "https://lu.ma/embed/event/" + nextEvent.eventId + "/simple"
-        iframe.style.border = "1px solid #bfcbda88"
-        iframe.style.borderRadius = "12px"
-        iframe.allow = "fullscreen; payment"
-        iframe.className = "w-full mx-auto h-[790px] md:h-[480px]"
-        document.getElementById("meetup-embed").appendChild(iframe)
-        meetupSection.classList.remove("hidden")
-      }
-
-      // Previous meetups: tweet IDs come from the gist; section stays hidden while it is empty.
-      fetch(tweetsGistUrl)
-        .then((res) => res.json())
-        .then((tweetIds) => {
-          if (!tweetIds.length) return
-          const tweetsRow = document.getElementById("tweets-row")
-          for (const tweetId of tweetIds) {
-            const card = document.createElement("div")
-            card.className = "dark shrink-0 w-[550px] max-w-[85vw]"
-            card.innerHTML = '<blockquote class="twitter-tweet"><a href="https://twitter.com/i/web/status/' + tweetId + '"></a></blockquote>'
-            tweetsRow.appendChild(card)
-          }
-          document.getElementById("previous-meetups").classList.remove("hidden")
-          const widgetsScript = document.createElement("script")
-          widgetsScript.src = "https://platform.twitter.com/widgets.js"
-          widgetsScript.async = true
-          document.body.appendChild(widgetsScript)
-        })
-        .catch((err) => console.error("Failed to load tweets:", err))
-    </script>
   </body>
+  <footer class="text-center mt-12 flex flex-col gap-2">
+      <p>Part of the <a href="https://hacka.network/" class="underline">Hacka Network</a></p>
+  </footer>
 </html>
