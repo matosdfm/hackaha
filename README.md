@@ -1,35 +1,45 @@
 # Hackaha
 
-Hackaha is the Prague Hacka* node: a weekly Thursday coworking day for indie makers, coders, designers, founders, and hardware hackers.
+Hackaha is the Prague Hacka* node: a weekly Thursday co-working day for indie makers, coders, designers, founders, and hardware hackers.
+
+Site: <https://hackaha.com> · Repo: <https://github.com/matosdfm/hackaha>
+
+The site is a **single `index.html` file** styled with Tailwind (loaded via the Tailwind browser CDN — no build step, no npm). Design copied from [hackaboa.com](https://hackaboa.com) (black background, IBM Plex Mono body, Press Start 2P headings, avocado-gold accents).
+
+## Edit the site
+
+Open `index.html` — everything lives in that one file:
+
+- **Copy/schedule**: the hero section.
+- **Next meetup**: create the event on [lu.ma](https://lu.ma), grab its event ID from the embed URL, then add a line to `lumaEvents` in the script at the bottom:
+  `{ date: "2026-10-08", eventId: "evt-xxxxxxxxxxxxxxxx" }`
+  The next upcoming event renders automatically; with no events the section stays hidden.
+- **Previous meetups (tweets)**: add tweet IDs (one per line, JSON array) to [this gist](https://gist.github.com/matosdfm/ebd367bfac76dfec177d3af3c861506d). The section stays hidden while the gist is empty.
 
 ## Local preview
 
-This is a static site. From this directory, run:
+Just open `index.html` in a browser, or:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>.
-
-## Before launch
-
-1. Create the Hackaha Telegram group and add `@the_hackabot` as an admin.
-2. Replace `hello@hackaha.com` and the FormSubmit endpoint in `index.html` if a different signup provider is selected. FormSubmit will also require confirming the destination email on first use.
-3. Point `hackaha.com` to the hosting provider. `CNAME` is ready for GitHub Pages custom-domain configuration.
-4. Confirm the first venue and keep its exact address out of the public site; send it after signup.
-5. Make sure the organizer has attended another Hacka* node before launch, as required by the network.
-
 ## Hosting (GitHub Pages)
 
-The site deploys automatically from `main` (repo root) to GitHub Pages with the custom domain `hackaha.com` (see the `CNAME` file). Repo: <https://github.com/matosdfm/hackaha>.
+Deploys automatically from `main` (repo root) on every push — no workflow, no build. The `CNAME` file keeps the custom domain `hackaha.com`.
 
-At the domain registrar, point DNS at GitHub Pages:
+DNS at the registrar:
 
 - `A` records for the apex `hackaha.com` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
 - `CNAME` for `www` → `matosdfm.github.io`
 
-Once DNS resolves and GitHub provisions the certificate, enable **Enforce HTTPS** in repo Settings → Pages. Any push to `main` redeploys the site in about a minute.
+Once DNS resolves and GitHub provisions the certificate, enable **Enforce HTTPS** in repo Settings → Pages.
+
+## Launch checklist (from `startanode.md`)
+
+1. Create the Hackaha Telegram group and add [@the_hackabot](https://t.me/the_hackabot) as an admin, then contact the network organizers to connect it.
+2. Confirm the first venue; keep its exact address off the public site and share it after signup.
+3. The organizer must have attended another Hacka* node before launch.
 
 ## Add Prague to hacka.network
 
@@ -48,4 +58,4 @@ After the node is connected with the network and running, fork [hacka-network/ha
 }
 ```
 
-Commit the change, push the branch, and open a pull request against `main`. The node should appear within a few minutes after the PR is merged.
+Commit the change, push the branch, and open a pull request against `main`. The node appears on hacka.network within a few minutes of merge.
