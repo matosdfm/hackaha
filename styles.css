@@ -1,0 +1,72 @@
+/* 04/10: added the visual system and responsive layout for the Hackaha launch page. */
+:root {
+  --ink: #171717;
+  --muted: #6f6b63;
+  --paper: #f3f0e9;
+  --acid: #d7f35b;
+  --line: rgba(23, 23, 23, .18);
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: 'Space Grotesk', Arial, sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); }
+a { color: inherit; text-decoration: none; }
+.siteHeader { height: 76px; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; border-bottom: 1px solid var(--line); }
+.wordmark { font-weight: 700; letter-spacing: -.08em; font-size: 1.5rem; }
+.wordmark span { color: #e85835; }
+.mainNav { display: flex; align-items: center; gap: 2.5rem; font-size: .78rem; font-weight: 500; }
+.navCta { border-bottom: 1px solid var(--ink); padding-bottom: 3px; }
+.sectionGrid { display: grid; grid-template-columns: minmax(150px, 22%) 1fr; padding: 0 5vw; }
+.hero { min-height: 650px; align-items: center; border-bottom: 1px solid var(--line); }
+.heroCopy { padding: 90px 0; max-width: 720px; }
+.eyebrow, .sectionNumber, .timezone, .formNote { font-family: var(--mono); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; }
+.eyebrow { margin: 0 0 2rem; }
+.dot { display: inline-block; width: 6px; height: 6px; margin: 0 7px 1px; background: #e85835; border-radius: 50%; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-size: clamp(4.3rem, 10vw, 9.2rem); line-height: .84; letter-spacing: -.09em; margin: 0 0 2.5rem; }
+h1 em, h2 em { font-family: var(--serif); font-weight: 400; letter-spacing: -.08em; }
+.heroIntro { max-width: 410px; font-size: 1.05rem; line-height: 1.45; color: var(--muted); margin-bottom: 2.3rem; }
+.button { border: 0; display: inline-flex; gap: 2.5rem; align-items: center; padding: 1rem 1.25rem; font-family: var(--sans); font-size: .82rem; font-weight: 600; cursor: pointer; transition: transform .2s, background .2s; }
+.button:hover { transform: translateY(-3px); }
+.buttonPrimary { background: var(--acid); }
+.heroMark { width: min(32vw, 360px); height: min(32vw, 360px); display: grid; place-items: center; justify-self: end; border-radius: 50%; background: var(--acid); transform: rotate(-12deg); }
+.markCircle { font-size: 9rem; line-height: .5; }
+.markLabel { position: absolute; text-align: center; font-family: var(--mono); font-size: .7rem; line-height: 1.15; letter-spacing: .1em; transform: rotate(12deg); }
+.ticker { overflow: hidden; white-space: nowrap; background: var(--ink); color: var(--acid); padding: 1rem 0; font-family: var(--mono); font-size: .73rem; letter-spacing: .1em; }
+.tickerTrack { animation: scroll 24s linear infinite; display: inline-block; }
+.ticker span { padding: 0 2rem; color: #e85835; }
+@keyframes scroll { to { transform: translateX(-20%); } }
+.about, .join { padding-top: 8rem; padding-bottom: 9rem; }
+.sectionNumber { padding-top: .5rem; color: var(--muted); }
+.sectionBody { max-width: 850px; }
+h2 { font-size: clamp(3rem, 6vw, 6.5rem); line-height: .9; letter-spacing: -.08em; margin-bottom: 2.5rem; }
+.aboutBody > p { max-width: 570px; font-size: 1.05rem; line-height: 1.5; color: var(--muted); }
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 5rem; border-top: 1px solid var(--line); }
+.principles div { padding: 1.25rem 1rem 0 0; display: grid; gap: .65rem; }
+.principles span { font-family: var(--mono); font-size: .65rem; color: #e85835; }
+.principles strong { font-size: .95rem; }
+.principles small { color: var(--muted); line-height: 1.4; }
+.darkSection { padding-top: 7rem; padding-bottom: 8rem; color: var(--paper); background: var(--ink); }
+.darkSection .sectionNumber, .darkSection .timezone { color: #9f9d95; }
+.scheduleHeading { display: flex; justify-content: space-between; align-items: flex-start; }
+.scheduleHeading h2 { margin-bottom: 5rem; }
+.timezone { padding-top: .8rem; }
+.scheduleList { border-top: 1px solid rgba(243, 240, 233, .25); }
+.scheduleItem { display: grid; grid-template-columns: 120px 1fr; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid rgba(243, 240, 233, .25); }
+.scheduleItem time { color: var(--acid); font-family: var(--mono); font-size: .75rem; }
+.scheduleItem h3 { font-size: 1.2rem; margin-bottom: .4rem; }
+.scheduleItem p { color: #aaa8a1; line-height: 1.45; margin: 0; }
+.join { background: #e85835; color: var(--ink); }
+.joinBody { max-width: 600px; }
+.joinBody h2 { margin-bottom: 2rem; }
+.joinIntro { max-width: 480px; line-height: 1.5; margin-bottom: 3rem; }
+.joinForm { display: grid; gap: 1.3rem; }
+.joinForm label { display: grid; gap: .45rem; font-family: var(--mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; }
+.joinForm input, .joinForm textarea { width: 100%; border: 0; border-bottom: 1px solid rgba(23,23,23,.55); padding: .6rem 0; resize: vertical; color: var(--ink); background: transparent; font: 1rem var(--sans); outline: none; }
+.joinForm input:focus, .joinForm textarea:focus { border-bottom-color: var(--paper); }
+.joinForm .button { justify-self: start; margin-top: 1rem; background: var(--ink); color: var(--paper); }
+.formNote { margin-top: 2rem; color: rgba(23,23,23,.65); line-height: 1.5; }
+.siteFooter { display: flex; justify-content: space-between; gap: 1rem; padding: 1.5rem 5vw; background: var(--acid); font-family: var(--mono); font-size: .62rem; letter-spacing: .05em; }
+@media (max-width: 700px) { .siteHeader { height: 64px; } .mainNav { gap: 1rem; } .mainNav > a:not(.navCta) { display: none; } .sectionGrid { display: block; } .hero { min-height: auto; padding-top: 5rem; padding-bottom: 5rem; } .heroMark { width: 180px; height: 180px; margin: 3rem auto 0; } .markCircle { font-size: 5rem; } .about, .join { padding-top: 5rem; padding-bottom: 6rem; } .sectionNumber { margin-bottom: 3rem; } .principles { grid-template-columns: 1fr; margin-top: 3rem; } .scheduleHeading { display: block; } .scheduleHeading h2 { margin-bottom: 1.5rem; } .scheduleItem { grid-template-columns: 72px 1fr; gap: 1rem; } .siteFooter { flex-direction: column; } }

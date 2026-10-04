@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hackaha is Prague's weekly co-working day for indie makers, coders, designers and hardware hackers.">
+  <title>Hackaha — Build in Prague</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 04/10: created the initial Hackaha Prague node landing page. -->
+  <header class="siteHeader">
+    <a class="wordmark" href="/" aria-label="Hackaha home">HACKAHA<span>*</span></a>
+    <nav class="mainNav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a class="navCta" href="#join">Join the node <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero sectionGrid">
+      <div class="heroCopy">
+        <p class="eyebrow">PRAGUE · CZ <span class="dot"></span> EVERY THURSDAY</p>
+        <h1>Make something<br><em>real.</em></h1>
+        <p class="heroIntro">A weekly day for independent makers, hackers, designers and founders to sit down, build, and show what they made.</p>
+        <a class="button buttonPrimary" href="#join">Join the Prague node <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="heroMark" aria-hidden="true">
+        <span class="markCircle">✳</span>
+        <span class="markLabel">BUILD<br>TOGETHER</span>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Hackaha values">
+      <div class="tickerTrack">CODE YOUR OWN THING <span>✳</span> SHARE YOUR PROGRESS <span>✳</span> MEET GOOD PEOPLE <span>✳</span> SHIP EVERY WEEK <span>✳</span></div>
+    </section>
+
+    <section id="about" class="about sectionGrid">
+      <div class="sectionNumber">01 / ABOUT</div>
+      <div class="sectionBody aboutBody">
+        <h2>Prague's day for<br><em>independent work.</em></h2>
+        <p>Hackaha is a community-run Thursday coworking day for people building their own things. Apps, startups, experiments, hardware, side projects — bring the work that matters to you.</p>
+        <p>No talks. No pitches. No productivity theatre. Just a room full of curious people, a clear goal for the day, and a chance to demo what changed.</p>
+        <div class="principles">
+          <div><span>01</span><strong>Build first</strong><small>Ideas get better when they become real.</small></div>
+          <div><span>02</span><strong>Share openly</strong><small>Feedback is part of the work.</small></div>
+          <div><span>03</span><strong>Keep it human</strong><small>Make friends, not just contacts.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="schedule sectionGrid darkSection">
+      <div class="sectionNumber">02 / THURSDAYS</div>
+      <div class="sectionBody">
+        <div class="scheduleHeading"><h2>A simple rhythm.<br><em>A full day.</em></h2><span class="timezone">CET / CEST</span></div>
+        <div class="scheduleList">
+          <div class="scheduleItem"><time>09:00</time><div><h3>Morning intros</h3><p>Say hello, share what you're working on, and set an intention for the day.</p></div></div>
+          <div class="scheduleItem"><time>12:30</time><div><h3>Lunch together</h3><p>Grab food nearby and compare notes. Optional, like everything here.</p></div></div>
+          <div class="scheduleItem"><time>15:00</time><div><h3>Afternoon demos</h3><p>Show what you made in 4–8 minutes. Finished is not required.</p></div></div>
+          <div class="scheduleItem"><time>17:00</time><div><h3>Evening hangout</h3><p>Drinks, dinner, and conversations somewhere nearby.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="join sectionGrid">
+      <div class="sectionNumber">03 / JOIN</div>
+      <div class="sectionBody joinBody">
+        <p class="eyebrow">COME BUILD WITH US</p>
+        <h2>Save a seat<br>at the <em>table.</em></h2>
+        <p class="joinIntro">Tell us a little about yourself and what you're building. We'll send you the next meetup details and the exact location after signup.</p>
+        <form class="joinForm" action="https://formsubmit.co/hello@hackaha.com" method="POST">
+          <input type="hidden" name="_subject" value="New Hackaha signup">
+          <input type="hidden" name="_next" value="https://hackaha.com/?signed-up=1">
+          <input type="hidden" name="_captcha" value="false">
+          <label>Name<input type="text" name="name" autocomplete="name" required></label>
+          <label>Email<input type="email" name="email" autocomplete="email" required></label>
+          <label>What are you building?<textarea name="project" rows="3" required></textarea></label>
+          <button class="button buttonPrimary" type="submit">Request an invite <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="formNote">We keep this small and personal. Your details are only used for Hackaha communication.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="siteFooter"><span>HACKAHA* · PRAGUE</span><span>BUILD SOMETHING YOU CARE ABOUT.</span><a href="mailto:hello@hackaha.com">hello@hackaha.com</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
