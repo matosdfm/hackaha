@@ -20,6 +20,17 @@ Then open <http://localhost:8000>.
 4. Confirm the first venue and keep its exact address out of the public site; send it after signup.
 5. Make sure the organizer has attended another Hacka* node before launch, as required by the network.
 
+## Hosting (GitHub Pages)
+
+The site deploys automatically from `main` (repo root) to GitHub Pages with the custom domain `hackaha.com` (see the `CNAME` file). Repo: <https://github.com/matosdfm/hackaha>.
+
+At the domain registrar, point DNS at GitHub Pages:
+
+- `A` records for the apex `hackaha.com` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- `CNAME` for `www` → `matosdfm.github.io`
+
+Once DNS resolves and GitHub provisions the certificate, enable **Enforce HTTPS** in repo Settings → Pages. Any push to `main` redeploys the site in about a minute.
+
 ## Add Prague to hacka.network
 
 After the node is connected with the network and running, fork [hacka-network/hacka.network](https://github.com/hacka-network/hacka.network), edit `nodes.json`, and add this entry to the `nodes` array:
