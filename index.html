@@ -3,32 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hackaha 🇨🇿 | Est. 2026 | Hacka* Network</title>
+    <title>Indie Hackers in Prague | HACKAHA</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up in Prague." />
+    <meta name="description" content="A biweekly meetup of indie hackers building their own independent apps/startups in Prague, Czechia." />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hackaha.com" />
-    <meta property="og:title" content="Hackaha 🇨🇿 | Est. 2026 | Hacka* Network" />
-    <meta property="og:description" content="A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up in Prague." />
+    <meta property="og:title" content="Indie Hackers in Prague | HACKAHA" />
+    <meta property="og:description" content="A biweekly meetup of indie hackers building their own independent apps/startups in Prague, Czechia." />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Hackaha 🇨🇿 | Est. 2026" />
-    <meta name="twitter:description" content="A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up in Prague." />
+    <meta name="twitter:title" content="Indie Hackers in Prague | HACKAHA" />
+    <meta name="twitter:description" content="A biweekly meetup of indie hackers building their own independent apps/startups in Prague, Czechia." />
 
     <!-- Icons and Links -->
     <link rel="canonical" href="https://hackaha.com" />
-    <!-- 04/10: fixed icon MIME type to match favicon.png -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesh eet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: "Departure Mono";
+        src: url("font/departure/DepartureMono-Regular.woff2") format("woff2"),
+             url("font/departure/DepartureMono-Regular.woff") format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
     <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-FayRDtyCMj25f9smkMsP7.js"></script>
     <script>
@@ -38,24 +46,18 @@
 
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
-      @theme {
-        --color-avocado-100: #fbf6ea;
-        --color-avocado-200: #f3e5bf;
-        --color-avocado-300: #ead394;
-        --color-avocado-400: #e2c169;
-        --color-avocado-500: #dab03f;
-        --color-avocado-600: #c09625;
-      }
 
       @layer base {
         body {
-          @apply bg-black text-white leading-relaxed font-normal;
+          @apply bg-[#333333] text-white leading-relaxed font-normal;
+          /* 10/10: reverted body/paragraph font to the original stack (VT323, monospace); Departure Mono is headings-only now */
           font-family: "VT323", monospace;
         }
 
         h1, h2, h3, h4, h5, h6 {
-          @apply font-bold mb-4;
-          font-family: "VT323", monospace;
+          @apply mb-4;
+          /* 10/10: headings use self-hosted Departure Mono; body text stays on the original fonts */
+          font-family: "Departure Mono", monospace;
         }
 
         h1 { @apply text-3xl md:text-5xl; }
@@ -66,25 +68,16 @@
 
         p { @apply text-base md:text-lg mb-4; }
 
-        a { @apply text-[#3872EC] hover:text-[#3872EC]/60; }
-
-        .github-icon {
-          @apply fixed right-4 top-4 z-20 transition-opacity hover:opacity-50;
+        /* 10/10: links use Departure Mono to match headings */
+        a {
+          @apply text-[#3872EC] hover:text-[#3872EC]/60;
+          font-family: "Departure Mono", monospace;
         }
 
-        @media (max-width: 768px) {
-          .github-icon { display: none; }
-        }
       }
     </style>
   </head>
   <body>
-    <a href="https://github.com/matosdfm/hackaha" target="_blank" class="github-icon" aria-label="Edit this on GitHub">
-      <svg width="30" height="30" viewBox="0 0 16 16" fill="#ffffff" aria-hidden="true">
-        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-      </svg>
-    </a>
-
     <div class="p-8 mt-20 max-w-full md:max-w-3xl mx-auto">
       <section>
         <h1 class="text-center text-white text-7xl">
@@ -94,46 +87,40 @@
           PRAHA, CZECHIA. Est. 2026.
         </p>
 
-      <p class="font-bold mt-12">
-          A community-run group of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, meeting up for weekly co-working (and demos) in Prague, Czechia. The exact location is shared after you <a href="https://t.me/matosdfm">sign up</a>.
-        </p>
-        <p class="text-base italic font-bold">
-          Not in Prague?
-          <a href="https://hacka.network/?utm_source=hackaha" target="_blank" class="underline">
-            More locations
-          </a>
-        </p>
-
-        <p>
-          If you code <span class="font-bold">your own projects</span> come and join us every Thursday from 9.15am in Prague.
-        </p>
-
-        <p>The usual schedule is:</p>
+      <p class="mt-12">
+          A biweekly gathering of indie makers / coders / designers / hardware hackers who build their own independent apps/startups, focusing on business strategy, building products, and how to distribute them.
+      </p>
+      <p class="">
+        If you code your own projects, come and join us every other Thursday from 5:30 PM in Prague.
+      </p>
+      <h2 class="text-3xl mt-12">Schedule:</h2>
         <ul class="list-disc list-inside mb-4">
-          <li><span class="font-bold">9.30am – Doors open</span></li>
-          <li><span class="font-bold">10am – Intros</span> (a little about yourself + what you're working on)</li>
-          <li><span class="font-bold">12:30pm – Local lunch</span> together (if you want)</li>
-          <li><span class="font-bold">3pm – Demos</span> (share what you made today, or just watch)</li>
-          <li><span class="font-bold">5pm – Beers</span> somewhere nearby 🍺</li>
+          <li><span class="font-bold">5:30 PM: </span>Doors open.</li>
+          <li><span class="font-bold">5:45 PM: </span>Lessons Learned. Share what you've learned recently with the group.</li>
+          <li><span class="font-bold">6:20 PM: </span>Chatting, pizza, and beers.</li>
+          <li><span class="font-bold">8:00 PM: </span>Doors close.
         </ul>
-
-      </section>
+    <h2 class="text-3xl mt-12">How to Join:</h2>
+    <p>DM us on <a href="https://t.me/matosdfm" class="underline">Telegram</a> or join the <a href="https://luma.com/sdktv3ea" class="underline font">Luma event</a>.</p>
+        </section>
 
       <!-- Next meetup: stays hidden until a Luma event is added in the script below -->
       <section id="next-meetup" class="mt-8 text-left">
         <div class="flex flex-col justify-center my-12">
-          <h2>Our next meetup:</h2>
+          <h2 class="text-3xl">Our next meetup:</h2>
           <p class="flex flex-col justify-center gap-x-2">
-            <h3>Meetup #1</h3>
-            <p>Date TBD | Location revealed after you <a href="https://t.me/matosdfm">sign up</a></p>
+            <p>Meetup #2</p>
+            <p>22/October | Location revealed after you sign up</p>
           </p>
         </div>
       </section>
 
-      <section id="previous-meetups" class="my-12 hidden">
-        <p>Previous meetups:</p>
-        <div class="overflow-x-auto scroll-smooth">
-          <div id="tweets-row" class="flex gap-4 pb-2"></div>
+      <section id="previous-meetups" class="mt-12">
+        <h2 class="text-3xl">Previous meetups:</h2>
+        <div class="flex flex-col justify-center my-12">
+          <div class="flex flex-col justify-center gap-x-2">
+            <p class="text-xl">Meetup #1 | 9/October</p>
+            <img src="pastMeetups/1.webp" class="w-full h-auto"></img>
         </div>
       </section>
     </div>

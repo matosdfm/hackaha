@@ -1,0 +1,5 @@
+# 10/10: added crawler directives and sitemap reference
+User-agent: *
+Allow: /
+
+Sitemap: https://hackaha.com/sitemap.xml
